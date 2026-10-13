@@ -1,0 +1,17 @@
+
+.label {
+    -fx-text-fill: #333333;
+}
+
+
+#inscribirse {
+    -fx-background-color: #8a4f7d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+
+#inscribirse:hover {
+    -fx-background-color: #733f66;
+}

@@ -1,0 +1,37 @@
+
+.label {
+    -fx-text-fill: #333333;
+}
+
+.text-field, .combo-box, .date-picker, .text-area {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d1c7bc;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.text-field:focused, .combo-box:focused, .date-picker:focused, .text-area:focused {
+    -fx-border-color: #8a4f7d;
+}
+
+
+.button {
+    -fx-background-color: #8a4f7d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-background-radius: 6px;
+    -fx-padding: 6px 14px;
+}
+
+
+.button:hover {
+    -fx-background-color: #733f66;
+}
+
+
+
+#mostrarResumen {
+    -fx-padding: 10px;              
+    -fx-text-fill: #2c2c2c;       
+}
