@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane fx:id="ventana" stylesheets="@inicio.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.aula.inscripcion.InicioController">
+<BorderPane fx:id="ventana" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" stylesheets="@inicio.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="es.aula.inscripcion.InicioController">
    <top>
       <Label text="Crochet With Me" BorderPane.alignment="CENTER">
          <font>
@@ -45,10 +44,7 @@
       </VBox>
    </center>
    <bottom>
-      <Button fx:id="inscribirse" onAction="#irFormulario" mnemonicParsing="false" text="INSCRIBIRSE" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT">
-         <font>
-            <Font size="18.0" />
-         </font>
+      <Button fx:id="inscribirse" graphicTextGap="0.0" mnemonicParsing="false" onAction="#irInscripciones" prefHeight="40.0" prefWidth="138.0" text="INSCRIBIRSE" textAlignment="CENTER" BorderPane.alignment="CENTER_RIGHT">
       </Button>
    </bottom>
 </BorderPane>

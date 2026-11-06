@@ -9,6 +9,8 @@
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-cursor: hand;
+	-fx-background-insets: 0;
+	-fx-font-size: 18px;
 }
 
 

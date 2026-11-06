@@ -15,11 +15,17 @@ public class InicioController {
 
 	
 	@FXML
-	private void irFormulario() {
+	private void irInscripciones() {
 		try {
-			Parent nuevaRaiz = FXMLLoader.load(getClass().getResource("/es/aula/inscripcion/formulario.fxml"));
+			Parent nuevaRaiz = FXMLLoader.load(getClass().getResource("/es/aula/inscripcion/inscripciones.fxml"));
 			Stage ventana = (Stage)inscribirse.getScene().getWindow();
-			ventana.getScene().setRoot(nuevaRaiz);
+			Scene nuevaEscena = new Scene(nuevaRaiz);
+			ventana.setScene(nuevaEscena);
+			
+			ventana.sizeToScene();
+			
+			ventana.setMinWidth(ventana.getWidth());
+			ventana.setMinHeight(ventana.getHeight());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
