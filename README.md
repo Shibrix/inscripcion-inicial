@@ -87,4 +87,6 @@ que estaba siendo incapaz de hacerlo por mi cuenta.
 - Pruebas de contraste: se realizan pruebas de contraste mediante la aplicación pick color online. Se obtiene resultados de 6:1. Se adjunta una
 captura en el apartado de bocetos de GitHub
 
+- El último commit realizado ha sido el dfce7f0e54523cae869aa2dabe066a2d435c39a2 
+
 Referencia de configuración: https://openjfx.io/openjfx-docs/
