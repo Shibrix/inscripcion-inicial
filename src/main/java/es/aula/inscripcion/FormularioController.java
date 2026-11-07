@@ -35,7 +35,18 @@ public class FormularioController {
 	@FXML
 	private Label mostrarResumen;
 	@FXML
-	private Button botonAniadir;
+	private Button botonAniadir;	
+	@FXML
+	private Label etiquetaBind;
+	
+	@FXML
+	private void initialize() {
+		if (etiquetaBind != null && nombre != null && combo != null) {
+            etiquetaBind.textProperty().bind(
+                Bindings.concat("Alumno/a: ", nombre.textProperty(), " | Curso: ", combo.valueProperty())
+            );
+        }
+	}
 
 	@FXML
 	private void resumen() {
@@ -142,7 +153,7 @@ public class FormularioController {
 			return;
 		}
 
-		if (combo1.isEmpty()) {
+		if (combo1 == null || combo1.isEmpty()) {
 			mostrarResumen.setStyle("-fx-text-fill: red");
 			mostrarResumen.setText("Debe seleccionar un curso");
 			mostrarResumen.setVisible(true);
@@ -190,7 +201,8 @@ public class FormularioController {
 		if (error) {
 			String textoResumen = nombre1 + ", " + edad1 + ", " + telefono1 + ", " + email1 + ", " + combo1 + ", "
 					+ fecha1 + ", " + observaciones1 + ", " + casilla;
-
+			
+			mostrarResumen.setStyle("-fx-text-fill: green");
 			mostrarResumen.setText(textoResumen);
 			mostrarResumen.setVisible(true);
 		}
@@ -218,7 +230,7 @@ public class FormularioController {
 		boolean error = true;
 		boolean foco = false;
 
-		if (nombre1.isEmpty() && edad1.isEmpty() && telefono1.isEmpty() && email1.isEmpty() && combo1==null || (combo1.isEmpty())
+		if (nombre1.isEmpty() && edad1.isEmpty() && telefono1.isEmpty() && email1.isEmpty() && (combo1==null || combo1.isEmpty())
 				&& fecha1 == null) {
 
 			mostrarResumen.setStyle("-fx-text-fill: red");
@@ -277,19 +289,6 @@ public class FormularioController {
 			return;
 		}
 
-		if (edad1.isEmpty()) {
-			mostrarResumen.setStyle("-fx-text-fill: red;");
-			mostrarResumen.setText("Debe introducir la edad");
-			mostrarResumen.setVisible(true);
-			if (!foco) {
-				edad.requestFocus();
-				edad.setStyle("-fx-border-color:red");
-				foco = true;
-			}
-			error = false;
-			return;
-		}
-
 		if (email1.isEmpty()) {
 			mostrarResumen.setStyle("-fx-text-fill: red;");
 			mostrarResumen.setText("Debe introducir el email");
@@ -303,7 +302,7 @@ public class FormularioController {
 			return;
 		}
 
-		if (combo1.isEmpty()) {
+		if (combo1 == null || combo1.isEmpty()) {
 			mostrarResumen.setStyle("-fx-text-fill: red");
 			mostrarResumen.setText("Debe seleccionar un curso");
 			mostrarResumen.setVisible(true);
@@ -380,9 +379,18 @@ public class FormularioController {
 	@FXML
 	private void volver() {
 		try {
-			Parent raizInicio = FXMLLoader.load(getClass().getResource("/es/aula/inscripcion/inicio.fxml"));
+			Parent raizInicio = FXMLLoader.load(getClass().getResource("/es/aula/inscripcion/inscripciones.fxml"));
 			Stage ventana = (Stage) nombre.getScene().getWindow();
-			ventana.getScene().setRoot(raizInicio);
+			ventana.setMinWidth(0);
+			ventana.setMinHeight(0);
+
+			Scene nuevaEscena = new Scene(raizInicio);
+			ventana.setScene(nuevaEscena);
+
+			ventana.sizeToScene();
+
+			ventana.setMinWidth(ventana.getWidth());
+			ventana.setMinHeight(ventana.getHeight());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

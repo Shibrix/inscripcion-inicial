@@ -24,6 +24,13 @@
     -fx-padding: 6px 14px;
 }
 
+.button:focused {
+    -fx-border-color: #ff5722;  
+    -fx-border-width: 2.5px;      
+    -fx-border-radius: 6px;
+    -fx-background-color: #733f66;
+}
+
 
 .button:hover {
     -fx-background-color: #733f66;
